@@ -1,0 +1,50 @@
+sudo apt update && sudo apt upgrade -y
+
+sudo apt install git -y
+
+sudo apt install python3 -y
+
+sudo apt install python3-pip -y
+
+python3 --version
+
+git clone https://github.com/zv3zdochka/Telegram-Message-Analyser.git
+
+cd Telegram-Message-Analyser.
+
+python -m venv myenv
+
+source myenv/bin/activate
+
+pip install -r requirements.txt
+
+pip check
+
+cd main
+
+huggingface-cli login <key>
+
+flask run --host=0.0.0.0 --port=5000
+
+set up google credintials and session parameters
+
+save
+
+
+CTRL + C
+
+python sessions.py
+
+fill in 3 codes
+
+flask run --host=0.0.0.0 --port=5000 &
+
+top - check flask there -> q
+
+http:\server_ip@5000 - site
+
+log/pas - admin admin
+
+well done
+
+
