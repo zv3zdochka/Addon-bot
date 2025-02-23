@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Чат с GPT-4o</title>
+  <!-- Скрипт Puter.js -->
+  <script src="https://js.puter.com/v2/"></script>
+  <style>
+      body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+      #output { margin-top: 20px; padding: 10px; border: 1px solid #ffffff; min-height: 50px; white-space: pre-wrap; text-align: left; }
+      .message { margin: 10px 0; }
+      .user { color: blue; }
+      .bot { color: green; }
+      .button-container { margin-top: 10px; }
+      button { margin: 5px; padding: 10px 20px; }
+  </style>
+</head>
+<body>
+  <h2>Чат с GPT-4o через Puter.js</h2>
+  <div id="output"></div>
+  <input type="text" id="userInput" placeholder="Введите ваш вопрос" size="50">
+  <div class="button-container">
+      <button onclick="askGPT()">Отправить</button>
+      <button onclick="clearChat()">Очистить чат</button>
+  </div>
+
+  <script>
+      // Храним историю сообщений
+      let messageHistory = [];
+
+      function askGPT() {
+          const userInput = document.getElementById("userInput").value;
+          if (!userInput) return;
+
+          // Выводим в консоль
+          console.log(`Вы: ${userInput}`);
+          // Отправляем на сервер, чтобы сохранить в logs.txt
+          sendToServer(`Вы: ${userInput}`);
+
+          // Добавляем сообщение в историю и обновляем вывод
+          messageHistory.push({ role: 'user', content: userInput });
+          updateOutput();
+
+          // Запрос к Puter.js
+          puter.ai.chat(messageHistory).then(response => {
+              console.log(`GPT-4o: ${response}`);
+              // Тоже отправляем на сервер
+              sendToServer(`GPT-4o: ${response}`);
+
+              // Добавляем в историю
+              messageHistory.push({ role: 'assistant', content: response });
+              updateOutput();
+          }).catch(error => {
+              console.error("Ошибка:", error);
+              // Логируем ошибку на сервер
+              sendToServer(`Ошибка: ${error}`);
+          });
+
+          document.getElementById("userInput").value = '';
+      }
+
+      function clearChat() {
+          messageHistory = [];
+          updateOutput();
+      }
+
+      function updateOutput() {
+          const outputDiv = document.getElementById("output");
+          outputDiv.innerHTML = '';
+
+          messageHistory.forEach(message => {
+              const messageElement = document.createElement('div');
+              messageElement.classList.add('message');
+              messageElement.classList.add(message.role === 'user' ? 'user' : 'bot');
+              messageElement.textContent = `${message.role === 'user' ? 'Вы' : 'GPT-4o'}: ${message.content}`;
+              outputDiv.appendChild(messageElement);
+          });
+
+          outputDiv.scrollTop = outputDiv.scrollHeight;
+      }
+
+      // Функция отправки лог-сообщения на сервер
+      function sendToServer(logMessage) {
+          fetch("/save_log", {
+              method: "POST",
+              headers: {
+                  "Content-Type": "application/json"
+              },
+              body: JSON.stringify({ message: logMessage })
+          })
+          .catch(err => console.error("Ошибка при отправке на сервер:", err));
+      }
+  </script>
+</body>
+</html>
