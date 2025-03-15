@@ -1,0 +1,121 @@
+<aiml>
+    <!-- Шаблоны для начала диалога -->
+    <category>
+        <pattern>ПРИВЕТ</pattern>
+        <template>Привет! Как дела?</template>
+    </category>
+
+    <category>
+        <pattern>ПРИВЕТ *</pattern>
+        <template>Привет! Рад вас видеть. Как ваши дела?</template>
+    </category>
+
+    <category>
+        <pattern>ПРИВЕТ КАК ДЕЛА</pattern>
+        <template>Привет! У меня всё хорошо, спасибо. А у вас как дела?</template>
+    </category>
+
+    <category>
+        <pattern>ПРИВЕТ ЧТО ДЕЛАЕШЬ</pattern>
+        <template>Привет! Я здесь, чтобы помочь вам. А вы чем занимаетесь?</template>
+    </category>
+
+    <category>
+        <pattern>ПРИВЕТ ЧЕМ ЗАНЯТ</pattern>
+        <template>Привет! Я готов помочь вам. А вы чем сегодня заняты?</template>
+    </category>
+
+    <category>
+        <pattern>ПРИВЕТ КАК ЖИЗНЬ</pattern>
+        <template>Привет! Всё идёт своим чередом. А у вас как жизнь?</template>
+    </category>
+
+    <category>
+        <pattern>ПРИВЕТ ЧТО НОВОГО</pattern>
+        <template>Привет! Ничего особенного. А у вас что-то новое?</template>
+    </category>
+
+    <category>
+        <pattern>ПРИВЕТ КАК НАСТРОЕНИЕ</pattern>
+        <template>Привет! У меня всё стабильно. А у вас как настроение?</template>
+    </category>
+
+    <category>
+        <pattern>ПРИВЕТ ЧТО ДЕЛАЕШЬ</pattern>
+        <template>Привет! Я здесь, чтобы общаться с вами. А вы чем заняты?</template>
+    </category>
+
+    <category>
+        <pattern>ПРИВЕТ ЧТО ПЛАНИРУЕШЬ</pattern>
+        <template>Привет! Планирую помочь вам. А у вас есть планы на сегодня?</template>
+    </category>
+
+    <category>
+        <pattern>ПРИВЕТ КАК ПРОШЕЛ ДЕНЬ</pattern>
+        <template>Привет! Мой день проходит как обычно. А у вас как прошёл день?</template>
+    </category>
+
+    <category>
+        <pattern>ПРИВЕТ ЧТО ДЕЛАЛ</pattern>
+        <template>Привет! Я отвечал на вопросы. А вы чем занимались?</template>
+    </category>
+
+    <category>
+        <pattern>ПРИВЕТ КАК ПРОШЛА НЕДЕЛЯ</pattern>
+        <template>Привет! Всё как обычно. А у вас как прошла неделя?</template>
+    </category>
+
+    <category>
+        <pattern>ПРИВЕТ ЧТО ИНТЕРЕСНОГО</pattern>
+        <template>Привет! Пока ничего нового. А у вас что-то интересное произошло?</template>
+    </category>
+
+    <category>
+        <pattern>ПРИВЕТ КАК ПРОШЛИ ВЫХОДНЫЕ</pattern>
+        <template>Привет! У меня нет выходных, я всегда на связи. А у вас как прошли выходные?</template>
+    </category>
+
+    <category>
+        <pattern>ПРИВЕТ ЧТО У ВАС ЕСТЬ</pattern>
+        <template>Привет! У нас много интересного. Например, Конструктор LEGO Icons "Система космического запуска NASA". Хотите узнать больше?</template>
+    </category>
+
+    <category>
+        <pattern>ПРИВЕТ МАШИНКИ</pattern>
+        <template>Привет! Любите машинки? У нас есть Машинка на пульте управления — разгоняется до 80 км/ч! Интересно?</template>
+    </category>
+
+    <category>
+        <pattern>ПРИВЕТ ТВОРЧЕСТВО</pattern>
+        <template>Привет! Для творчества могу предложить Набор "Мозаика. Сделай сам" (кошка). Хотите попробовать?</template>
+    </category>
+
+    <category>
+        <pattern>ПРИВЕТ ИГРУШКИ ДЛЯ ДЕТЕЙ</pattern>
+        <template>Привет! Для малышей есть Пирамида "Уточка" с 5 кольцами — яркая и развивающая. Хотите узнать больше?</template>
+    </category>
+
+    <!-- Шаблон для общего вопроса о товарах -->
+    <category>
+        <pattern>ЧТО У ВАС ЕСТЬ</pattern>
+        <template>У нас много интересного! Например, Конструктор LEGO Icons "Система космического запуска NASA" — крутая штука для любителей космоса. Хочешь узнать больше?</template>
+    </category>
+
+    <!-- Шаблон для интереса к машинкам -->
+    <category>
+        <pattern>МАШИНКИ</pattern>
+        <template>Любишь машинки? У нас есть Машинка на пульте управления — разгоняется до 80 км/ч! Может, расскажу подробнее?</template>
+    </category>
+
+    <!-- Шаблон для творчества -->
+    <category>
+        <pattern>ТВОРЧЕСТВО</pattern>
+        <template>Для творчества могу предложить Набор "Мозаика. Сделай сам" (кошка). Отличный способ провести время! Интересно?</template>
+    </category>
+
+    <!-- Шаблон для детей -->
+    <category>
+        <pattern>ИГРУШКИ ДЛЯ ДЕТЕЙ</pattern>
+        <template>Для малышей есть Пирамида "Уточка" с 5 кольцами — яркая и развивающая. Хочешь подробности?</template>
+    </category>
+</aiml>
